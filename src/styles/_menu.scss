@@ -2,197 +2,203 @@
 @use './variables' as vars;
 
 .menu {
-  padding: 4rem 2rem;
-  background-color: vars.$background;
-  color: vars.$text-color;
-  font-family: vars.$font;
-  min-height: 60vh;
+  padding: 2rem;
+  background-color: #fdfaf6;
+  
 
   &__title {
-    text-align: center;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    padding-top: 2rem;
+    font-weight: 600;
     margin-bottom: 2rem;
-    color: vars.$accent;
+    text-align: center;
+    color: #8b0000;
+    text-shadow: 1px 1px 0 #fff5e1;
   }
 
   &__nav {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
 
     &-btn {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      padding: 0.5rem 1.2rem;
+      background-color: #fff5e1;
+      border: 2px solid #8b0000;
+      color: #8b0000;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
       cursor: pointer;
-      color: vars.$text-color;
-      border-bottom: 2px solid transparent;
-      transition: color 0.3s, border-color 0.3s;
+      font-weight: 500;
+      transition: all 0.3s ease;
 
-      &.active,
-      &:hover {
-        color: vars.$accent;
-        border-color: vars.$accent;
+      &:hover,
+      &.active {
+        background-color: #8b0000;
+        color: #fff5e1;
       }
     }
   }
 
   &__items {
-    max-width: 900px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    align-items: center;
+    gap: 2rem;
   }
 
   &__item {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem 1.2rem;
-    border: 1px solid color.scale(vars.$accent, $lightness: -30%);
-    border-radius: 8px;
-    background-color: color.scale(vars.$background, $lightness: 10%);
-    transition: box-shadow 0.3s ease;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    min-height: 120px; // altura mínima uniforme
 
     &:hover {
-      box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3);
+      transform: translateY(-4px);
+    }
+
+    &-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
     &-name {
       font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+      text-align: center;
     }
 
     &-desc {
       font-size: 1rem;
-      color: color.scale(vars.$text-color, $lightness: 30%);
+      color: #666;
+      margin-bottom: 1rem;
+      text-align: center;
+      min-height: 48px; // ajuda a manter a altura padrão mesmo com descrições curtas
+    }
+
+    &-price {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #8b0000;
+      margin-bottom: 1rem;
     }
 
     &-action {
+      margin-top: auto;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       gap: 1rem;
-
-      & > span {
-        font-weight: 700;
-        font-size: 1rem;
-        color: vars.$accent;
-        min-width: 80px;
-        text-align: right;
-      }
+      width: 100%;
 
       .menu__add-btn {
-        background-color: vars.$accent;
+        background-color: #8b0000;
+        color: #fff5e1;
+        padding: 0.5rem 1rem;
         border: none;
-        color: white;
-        padding: 0.4rem 1rem;
-        border-radius: 4px;
-        font-weight: 600;
+        border-radius: 6px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: color.scale(vars.$accent, $lightness: -20%);
+          background-color: #a40000;
         }
       }
 
-      // Novos estilos para controles de quantidade
       .quantity-controls {
         display: flex;
         align-items: center;
         gap: 0.5rem;
 
         .qty-btn {
-          background-color: vars.$accent;
-          color: white;
+          background-color: #f0e6d6;
           border: none;
-          border-radius: 4px;
-          width: 30px;
-          height: 30px;
-          font-weight: 700;
+          padding: 0.4rem 0.7rem;
+          border-radius: 6px;
           cursor: pointer;
-          user-select: none;
-          transition: background-color 0.3s;
+          font-weight: bold;
+          color: #8b0000;
+          font-size: 1rem;
 
           &:hover {
-            background-color: color.scale(vars.$accent, $lightness: -20%);
+            background-color: #e6d8c6;
           }
         }
 
         .qty-display {
-          min-width: 20px;
-          text-align: center;
-          font-weight: 700;
           font-size: 1rem;
-          color: vars.$text-color;
+          min-width: 1.5rem;
+          text-align: center;
         }
       }
     }
   }
+}
 
-  #menu {
-    scroll-margin-top: 100px;
-  }
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    padding: 1rem;
 
-  // Responsividade
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
-
-    &__nav {
-      justify-content: center;
-      gap: 0rem;
-      margin-bottom: 3rem;
-
-      &-btn {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
-      }
-    }
-
-    &__items {
-      gap: 1.2rem;
+    &__title {
+      font-size: 2rem;
+      padding-top: 5rem;
     }
 
     &__item {
-      flex-direction: column;
-      align-items: flex-start;
+      max-width: 100%;
+      padding: 1rem;
+
+      &-name {
+        font-size: 1.2rem;
+      }
+
+      &-desc {
+        font-size: 0.95rem;
+      }
+
+      &-price {
+        font-size: 1.1rem;
+      }
 
       &-action {
-        width: 100%;
-        margin-top: 0.8rem;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-
-        & > span {
-          min-width: auto;
-          font-size: 1.2rem;
-          white-space: nowrap;
-          display: inline-block;
-          text-align: right;
-        }
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
 
         .menu__add-btn {
-          padding: 0.5rem 1.5rem;
-          font-size: 1rem;
-          width: 80%;
+          width: 100%;
           text-align: center;
+          font-size: 1rem;
         }
 
-        // Ajuste para controles de quantidade no mobile
         .quantity-controls {
+          justify-content: center;
+
           .qty-btn {
-            width: 36px;
-            height: 36px;
-            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
           }
 
           .qty-display {
-            font-size: 1.2rem;
-            min-width: 28px;
+            font-size: 1.1rem;
           }
         }
       }
