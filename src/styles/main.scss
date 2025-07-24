@@ -1,0 +1,19 @@
+
+@use './header';
+@use './loader.scss';
+@use './cta';
+@use './_menu';
+@use './variables';
+@use './swal';
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; // altura do header
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: -10px; // aumente conforme necessário no mobile
+  }
+}

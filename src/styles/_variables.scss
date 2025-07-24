@@ -1,0 +1,31 @@
+// Cores principais
+$primary: #c0392b;         
+$secondary: #f1c40f;       
+$light: #fdfcfb;           
+$dark: #2c3e50;           
+$gray: #bdc3c7;            
+
+// Variáveis usadas no menu
+$background: $light;
+$text-color: $dark;
+$accent: $primary;
+
+// Tipografia
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font: $font-family;
+
+// Tamanhos de fonte
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+
+// Espaçamento
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+
+// Bordas
+$border-radius: 0.5rem;
+
+// Sombreamento
+$box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

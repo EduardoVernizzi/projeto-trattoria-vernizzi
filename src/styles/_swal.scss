@@ -1,0 +1,35 @@
+.custom-swal-responsive {
+  max-width: 500px !important;
+  width: 90% !important;
+  font-size: 16px;
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      background-color: #f9f9f9;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .pix-section textarea {
+      background-color: #e6fff3;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+  }
+}
