@@ -230,27 +230,33 @@ const Header = () => {
     );
   
     const style = document.createElement("style");
-    style.textContent = `
-      @media (max-width: 576px) {
-        .swal2-popup {
-          width: 95% !important;
-          padding: 1rem !important;
-        }
-        .swal2-html-container .container,
-        .swal2-html-container input,
-        .swal2-html-container select {
-          width: 100% !important;
-          max-width: 100% !important;
-          box-sizing: border-box !important;
-          font-size: 14px !important;
-        }
-        .swal2-html-container .row {
-          flex-direction: column !important;
-          gap: 0.5rem;
-        }
-      }
-    `;
-    document.head.appendChild(style);
+style.textContent = `
+  .swal2-html-container input,
+  .swal2-html-container select,
+  .swal2-html-container .form-control,
+  .swal2-html-container .form-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 1rem !important;
+  }
+
+  .swal2-html-container .row {
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 576px) {
+    .swal2-popup {
+      width: 95% !important;
+      padding: 1rem !important;
+    }
+
+    .swal2-html-container .row {
+      flex-direction: column !important;
+    }
+  }
+`;
+document.head.appendChild(style);
   
     Swal.fire({
       title: "Finalizar Pedido",
@@ -279,7 +285,7 @@ const Header = () => {
       });
     });
   };
-  
+
   return (
     <header className="header">
       <div className="left-section">

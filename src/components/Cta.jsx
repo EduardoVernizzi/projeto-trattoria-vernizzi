@@ -16,7 +16,7 @@ export default function Cta() {
       />
       <div className="cta__content">
         <h2>Experimente o verdadeiro sabor da Itália</h2>
-        <p>Peça agora e receba em casa!</p>
+        <p>Peça agora e receba em casa 💚</p>
       </div>
     </section>
   );
