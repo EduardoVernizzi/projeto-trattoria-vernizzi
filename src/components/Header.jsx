@@ -101,7 +101,7 @@ const Header = () => {
     pagamentoSelect.style.maxWidth = "90%";
     pagamentoSelect.style.boxSizing = "border-box";
     pagamentoSelect.innerHTML = `
-      <option value="" disabled selected>Selecione a forma de pagamento</option>
+      <option value="" disabled selected>Forma de pagamento</option>
       <option value="cartao">Cartão</option>
       <option value="pix">PIX</option>
       <option value="dinheiro">Dinheiro</option>
@@ -149,7 +149,7 @@ const Header = () => {
 
     const dinheiroInfo = document.createElement("input");
     dinheiroInfo.className = "form-control mb-2";
-    dinheiroInfo.placeholder = "Vai precisar de troco para quanto?";
+    dinheiroInfo.placeholder = "Troco para quanto?";
     dinheiroInfo.type = "text";
     dinheiroInfo.style.display = "none";
     dinheiroInfo.addEventListener("input", (e) => {
