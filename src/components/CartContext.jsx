@@ -8,10 +8,27 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
+  const addToCart = (item, showAlert = true) => {
     setCartItems((prevItems) => {
       const existing = prevItems.find((i) => i.id === item.id);
+  
       if (existing) {
+        if (showAlert) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Item adicionado ao carrinho!',
+            showConfirmButton: false,
+            timer: 1200,
+            timerProgressBar: true,
+          });
+        }
+  
+        return prevItems.map((i) =>
+          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
+        );
+      }
+  
+      if (showAlert) {
         Swal.fire({
           icon: 'success',
           title: 'Item adicionado ao carrinho!',
@@ -19,19 +36,8 @@ export const CartProvider = ({ children }) => {
           timer: 1200,
           timerProgressBar: true,
         });
-        return prevItems.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
-        );
       }
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Item adicionado ao carrinho!',
-        showConfirmButton: false,
-        timer: 1200,
-        timerProgressBar: true,
-      });
-
+  
       return [...prevItems, item];
     });
   };

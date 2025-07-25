@@ -326,7 +326,7 @@ const Header = () => {
                           <div className="cart-item-qty">
                             <button onClick={() => decreaseQuantity(item.id)} aria-label="Diminuir quantidade"><FaMinus /></button>
                             <span>{item.quantity}</span>
-                            <button onClick={() => addToCart({ ...item, quantity: 1 })} aria-label="Adicionar quantidade"><FaPlus /></button>
+                            <button onClick={() => addToCart({ ...item, quantity: 1 }, false)} aria-label="Adicionar quantidade"><FaPlus /></button>
                             <button onClick={() => removeFromCart(item.id)} aria-label="Remover item" className="remove-btn"><FaTrash /></button>
                           </div>
                           <div className="cart-item-total">Total: R$ {totalItem}</div>
