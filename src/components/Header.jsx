@@ -321,7 +321,7 @@ const Header = () => {
                         <li key={item.id} className="cart-item">
                           <div className="cart-item-info">
                             <span className="cart-item-name">{item.name}</span>
-                            <span className="cart-item-price">R$ {item.price}</span>
+                            <span className="cart-item-price"> {item.price}</span>
                           </div>
                           <div className="cart-item-qty">
                             <button onClick={() => decreaseQuantity(item.id)} aria-label="Diminuir quantidade"><FaMinus /></button>
