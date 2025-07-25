@@ -4,7 +4,7 @@ import "../styles/_menu.scss";
 
 const menuData = {
   entradas: [
-    { id: 1, name: "Bruschetta", price: "R$ 18,00", description: "Pão crocante com tomate e manjericão." },
+    { id: 1, name: "Chupisco", price: "R$ 18,00", description: "Chupisco especial do chefe Eduardo" },
     { id: 2, name: "Caprese", price: "R$ 22,00", description: "Salada de tomate, muçarela e manjericão." },
     { id: 3, name: "Crostini", price: "R$ 19,00", description: "Pãezinhos crocantes cobertos com uma variedade de ingredientes, como patês, queijos e vegetais grelhados." },
   ],
@@ -20,8 +20,8 @@ const menuData = {
   ],
   bebidas: [
     { id: 10, name: "Vinho Tinto", price: "R$ 38,00", description: "Taça de vinho tinto seco." },
-    { id: 11, name: "limonada suiça", price: "R$ 15,00", description: "Água mineral com gás." },
-    { id: 12, name: "Água com Gás", price: "R$ 8,00", description: "Uma refrescante limonada cremosa com um toque adocicado, feita com limão, açúcar, gelo e leite condensado." },
+    { id: 11, name: "Água com Gás ", price: "R$ 15,00", description: "Água mineral com gás." },
+    { id: 12, name: "Limonada Suiça", price: "R$ 8,00", description: "Uma refrescante limonada cremosa com um toque adocicado, feita com limão, açúcar, gelo e leite condensado." },
   ],
 };
 
