@@ -233,36 +233,48 @@ const Header = () => {
     );
 
 
-    const style = document.createElement("style");
+    onst style = document.createElement("style");
     style.textContent = `
-  @media (max-width: 576px) {
-    .swal2-popup {
-      width: 90% !important;
-      max-width: 100% !important;
-      padding: 1rem !important;
-    }
-
-    .swal2-html-container .container {
-      width: 100% !important;
-    }
-
-    select.form-select {
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    .swal2-html-container input,
-    .swal2-html-container .form-control {
-      width: 100% !important;
-      max-width: 100% !important;
-      font-size: 14px;
-    }
-  }
-`;
+      @media (max-width: 576px) {
+        .swal2-popup {
+          width: 95% !important;
+          padding: 1rem !important;
+        }
+    
+        .swal2-html-container .container {
+          width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+    
+        .swal2-html-container .form-group,
+        .swal2-html-container .form-control,
+        .swal2-html-container .form-select,
+        .swal2-html-container input,
+        .swal2-html-container select {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 100% !important;
+          box-sizing: border-box !important;
+          font-size: 14px !important;
+        }
+    
+        .swal2-html-container .row {
+          display: flex;
+          flex-direction: column !important;
+          gap: 0.5rem;
+        }
+    
+        .swal2-html-container .col,
+        .swal2-html-container .col-6 {
+          width: 100% !important;
+          max-width: 100% !important;
+          padding: 0 !important;
+        }
+      }
+    `;
     document.head.appendChild(style);
-
 
     Swal.fire({
       title: "Finalizar Pedido",
