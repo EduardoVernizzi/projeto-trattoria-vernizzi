@@ -22,7 +22,7 @@ const menuData = {
     { id: 12, name: "Gelato Artigianale", price: "R$ 22,00", description: "Autêntico gelato italiano artesanal, feito com ingredientes naturais. Sabores disponíveis: pistache, nocciola, baunilha de Madagascar e chocolate meio amargo." },
   ],
   bebidas: [
-    { id: 13, name: "Chianti DOCG – Toscana", price: "R$ 118,00", description: "Taça de vinho tinto seco." },
+    { id: 13, name: "Chianti DOCG – Toscana", price: "R$ 118,00", description: "Garrafa de vinho tinto seco." },
     { id: 14, name: "Suco Del Valle", price: "R$ 8,00", description: "Disponível em vários sabores: uva, manga, maracujá, goiaba, além da linha Del Valle 100% Fruta." },
     { id: 15, name: "Refrigerantes", price: "R$ 8,00", description: "Servidos em lata (350ml)." },
     { id: 16, name: "Água Mineral", price: "R$ 5,00", description: "Água mineral com ou sem gás." },
