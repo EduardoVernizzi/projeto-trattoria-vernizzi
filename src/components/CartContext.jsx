@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const CartContext = createContext();
 
@@ -11,10 +12,26 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevItems) => {
       const existing = prevItems.find((i) => i.id === item.id);
       if (existing) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Item adicionado ao carrinho!',
+          showConfirmButton: false,
+          timer: 1200,
+          timerProgressBar: true,
+        });
         return prevItems.map((i) =>
           i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
         );
       }
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Item adicionado ao carrinho!',
+        showConfirmButton: false,
+        timer: 1200,
+        timerProgressBar: true,
+      });
+
       return [...prevItems, item];
     });
   };

@@ -233,7 +233,7 @@ const Header = () => {
     );
 
 
-    onst style = document.createElement("style");
+    const style = document.createElement("style");
     style.textContent = `
       @media (max-width: 576px) {
         .swal2-popup {
