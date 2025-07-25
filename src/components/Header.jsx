@@ -215,7 +215,7 @@ const Header = () => {
     const cancelarBtn = document.createElement("button");
     cancelarBtn.type = "button";
     cancelarBtn.className = "btn btn-outline-secondary";
-    cancelarBtn.innerText = "Cancelar";
+    cancelarBtn.innerText = "X";
     cancelarBtn.addEventListener("click", () => Swal.close());
 
     actions.append(cancelarBtn, finalizarBtn);

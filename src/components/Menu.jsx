@@ -4,24 +4,28 @@ import "../styles/_menu.scss";
 
 const menuData = {
   entradas: [
-    { id: 1, name: "Chupisco", price: "R$ 18,00", description: "Chupisco especial do chefe Eduardo" },
-    { id: 2, name: "Caprese", price: "R$ 22,00", description: "Salada de tomate, muçarela e manjericão." },
-    { id: 3, name: "Crostini", price: "R$ 19,00", description: "Pãezinhos crocantes cobertos com uma variedade de ingredientes, como patês, queijos e vegetais grelhados." },
+    { id: 1, name: "Bruschetta Tradizionale", price: "R$ 28,00", description: "Fatias de pão italiano crocante, levemente tostadas e cobertas com tomate fresco em cubos, manjericão, azeite extravirgem e toque de alho." },
+    { id: 2, name: "Arancini Siciliani", price: "R$ 34,00", description: "Clássicos bolinhos de risoto recheados com muçarela derretida e ragù de carne, empanados e fritos até ficarem dourados. Servidos com molho de tomate caseiro." },
+    { id: 3, name: "Carpaccio di Manzo", price: "R$ 42,00", description: "Finas lâminas de filé-mignon cru, temperadas com limão siciliano, rúcula fresca, lascas de parmesão e um fio de azeite trufado." },
+    { id: 4, name: "Frittura di Calamari", price: "R$ 38,00", description: "Anéis de lula empanados e fritos, crocantes por fora e macios por dentro. Servidos com limão siciliano e molho aioli artesanal." },
   ],
   principais: [
-    { id: 4, name: "Risoto de Funghi", price: "R$ 45,00", description: "Risoto cremoso com cogumelos." },
-    { id: 5, name: "Lasanha Bolonhesa", price: "R$ 42,00", description: "Lasanha tradicional ao molho bolonhesa." },
-    { id: 6, name: "Carbonara", price: "R$ 59,00", description: "Feito com espaguete, guanciale (ou pancetta), gema de ovo, queijo pecorino e pimenta do reino, sem creme de leite." },
+    { id: 5, name: "Tagliatelle alla Bolognese", price: "R$ 58,00", description: "Massa fresca tipo tagliatelle envolvida em um clássico ragù de carne bovina e suína, cozido lentamente com tomate italiano e ervas. Finalizado com queijo parmesão ralado na hora." },
+    { id: 6, name: "Risotto al Funghi Porcin", price: "R$ 64,00", description: "Arroz arbório cremoso preparado com funghi porcini importado, caldo artesanal, vinho branco e finalizado com manteiga trufada e lascas de parmesão." },
+    { id: 7, name: "Polpetone alla Parmigiana", price: "R$ 62,00", description: "Clássico polpetone de carne recheado com muçarela, empanado e coberto com molho de tomate rústico e queijo gratinado. Servido com espaguete na manteiga e sálvia." },
+    { id: 8, name: "Spaghetti alla Carbonara", price: "R$ 59,00", description: "Autêntica receita romana feita com spaghetti al dente, guanciale crocante, ovos frescos, queijo pecorino romano e pimenta-do-reino moída na hora. Sem creme de leite, como manda a tradição." },
   ],
   sobremesas: [
-    { id: 7, name: "Tiramisu", price: "R$ 25,00", description: "Sobremesa clássica italiana com café." },
-    { id: 8, name: "Panna Cotta", price: "R$ 23,00", description: "Sobremesa cremosa com calda de frutas vermelhas." },
-    { id: 9, name: "Cannoli", price: "R$ 16,00", description: "Casquinha crocante em formato de tubo recheada com um creme doce e cremoso à base de ricota." },
+    { id: 9, name: "Tiramisù Classico", price: "R$ 28,00", description: "Camadas de biscoitos embebidos em café espresso, creme mascarpone leve e aerado, polvilhado com cacau 100%. Um clássico italiano irresistível." },
+    { id: 10, name: "Panna Cotta ai Frutti Rossi ", price: "R$ 23,00", description: "Delicado creme cozido de baunilha com textura suave, servido com coulis de frutas vermelhas frescas. Refrescante e elegante." },
+    { id: 11, name: "Cannoli Siciliani", price: "R$ 30,00", description: "Massa crocante frita recheada com ricota doce cremosa, gotas de chocolate amargo e toque de laranja cristalizada. Polvilhado com açúcar de confeiteiro." },
+    { id: 12, name: "Gelato Artigianale", price: "R$ 22,00", description: "Autêntico gelato italiano artesanal, feito com ingredientes naturais. Sabores disponíveis: pistache, nocciola, baunilha de Madagascar e chocolate meio amargo." },
   ],
   bebidas: [
-    { id: 10, name: "Vinho Tinto", price: "R$ 38,00", description: "Taça de vinho tinto seco." },
-    { id: 11, name: "Água com Gás ", price: "R$ 15,00", description: "Água mineral com gás." },
-    { id: 12, name: "Limonada Suiça", price: "R$ 8,00", description: "Uma refrescante limonada cremosa com um toque adocicado, feita com limão, açúcar, gelo e leite condensado." },
+    { id: 13, name: "Chianti DOCG – Toscana", price: "Taça: R$ 32,00 | Garrafa: R$ 118,00", description: "Taça de vinho tinto seco." },
+    { id: 14, name: "Sucos Naturais", price: "R$ 15,00", description: "Sucos feitos na hora, com frutas frescas da estação. Sabores: Laranja, Limão, Abacaxi com hortelã, Morango e Maracujá" },
+    { id: 15, name: "Refrigerantes", price: "R$ 8,00", description: "Servidos em lata (350ml)." },
+    { id: 16, name: "Água Mineral", price: "R$ 5,00", description: "Água mineral com ou sem gás." },
   ],
 };
 
