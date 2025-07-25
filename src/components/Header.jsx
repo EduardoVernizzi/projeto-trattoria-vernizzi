@@ -61,27 +61,27 @@ const Header = () => {
 
   const handleFinishPurchase = () => {
     setCartOpen(false);
-  
+
     const cartTotal = cartItems.reduce((total, item) => {
       const cleanPrice = parseFloat(item.price.toString().replace(/[^\d,]/g, "").replace(",", "."));
       return total + cleanPrice * item.quantity;
     }, 0);
-  
+
     const form = document.createElement("form");
     form.className = "container mt-3";
-  
+
     const nome = document.createElement("input");
     nome.className = "form-control mb-2";
     nome.type = "text";
     nome.placeholder = "Nome completo";
     nome.required = true;
-  
+
     const endereco = document.createElement("input");
     endereco.className = "form-control mb-2";
     endereco.type = "text";
     endereco.placeholder = "Endereço (ex: Rua das Flores, 123)";
     endereco.required = true;
-  
+
     const telefone = document.createElement("input");
     telefone.className = "form-control mb-2";
     telefone.type = "tel";
@@ -94,7 +94,7 @@ const Header = () => {
       if (phoneValue.length > 10) phoneValue = `${phoneValue.slice(0, 10)}-${phoneValue.slice(10)}`;
       e.target.value = phoneValue;
     });
-  
+
     const pagamentoSelect = document.createElement("select");
     pagamentoSelect.className = "form-select mb-3";
     pagamentoSelect.required = true;
@@ -106,11 +106,11 @@ const Header = () => {
       <option value="pix">PIX</option>
       <option value="dinheiro">Dinheiro</option>
     `;
-  
+
     const cartaoFields = document.createElement("div");
     cartaoFields.className = "row g-2 mb-3";
     cartaoFields.style.display = "none";
-  
+
     const numeroCartao = document.createElement("input");
     numeroCartao.type = "text";
     numeroCartao.placeholder = "Número do cartão";
@@ -120,7 +120,7 @@ const Header = () => {
       val = val.match(/.{1,4}/g)?.join(" ") || val;
       e.target.value = val;
     });
-  
+
     const validadeCartao = document.createElement("input");
     validadeCartao.type = "text";
     validadeCartao.placeholder = "Validade (MM/aa)";
@@ -132,7 +132,7 @@ const Header = () => {
       }
       e.target.value = val;
     });
-  
+
     const cvvCartao = document.createElement("input");
     cvvCartao.type = "text";
     cvvCartao.placeholder = "CVV";
@@ -141,12 +141,12 @@ const Header = () => {
     cvvCartao.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/\D/g, "").slice(0, 3);
     });
-  
+
     const pixInfo = document.createElement("p");
     pixInfo.className = "text-success fw-semibold";
     pixInfo.textContent = "Chave PIX: trattoria@vernizzi.com";
     pixInfo.style.display = "none";
-  
+
     const dinheiroInfo = document.createElement("input");
     dinheiroInfo.className = "form-control mb-2";
     dinheiroInfo.placeholder = "Vai precisar de troco para quanto?";
@@ -158,19 +158,19 @@ const Header = () => {
       let formatted = (parseInt(int, 10) / 100).toFixed(2);
       e.target.value = `R$ ${formatted.replace(".", ",")}`;
     });
-  
+
     pagamentoSelect.addEventListener("change", () => {
       const forma = pagamentoSelect.value;
-  
+
       cartaoFields.style.display = "none";
       pixInfo.style.display = "none";
       dinheiroInfo.style.display = "none";
-  
+
       numeroCartao.required = false;
       validadeCartao.required = false;
       cvvCartao.required = false;
       dinheiroInfo.required = false;
-  
+
       if (forma === "cartao") {
         cartaoFields.style.display = "flex";
         numeroCartao.required = true;
@@ -183,14 +183,14 @@ const Header = () => {
         dinheiroInfo.required = true;
       }
     });
-  
+
     cartaoFields.append(numeroCartao, validadeCartao, cvvCartao);
-  
+
     const itensResumo = cartItems.map((item) => {
       const cleanPrice = parseFloat(item.price.toString().replace(/[^\d,]/g, "").replace(",", "."));
       return `<li class="list-group-item">${item.name} x${item.quantity} - R$ ${(cleanPrice * item.quantity).toFixed(2).replace(".", ",")}</li>`;
     }).join("");
-  
+
     const resumo = document.createElement("div");
     resumo.className = "mt-4";
     resumo.innerHTML = `
@@ -200,23 +200,23 @@ const Header = () => {
         <div class="card-footer fw-bold">Total: R$ ${cartTotal.toFixed(2).replace(".", ",")}</div>
       </div>
     `;
-  
+
     const actions = document.createElement("div");
     actions.className = "d-flex justify-content-end gap-2 mt-3";
-  
+
     const finalizarBtn = document.createElement("button");
     finalizarBtn.type = "submit";
     finalizarBtn.className = "btn btn-success";
     finalizarBtn.innerText = "Finalizar Pedido";
-  
+
     const cancelarBtn = document.createElement("button");
     cancelarBtn.type = "button";
     cancelarBtn.className = "btn btn-outline-secondary";
     cancelarBtn.innerText = "X";
     cancelarBtn.addEventListener("click", () => Swal.close());
-  
+
     actions.append(cancelarBtn, finalizarBtn);
-  
+
     form.append(
       nome,
       endereco,
@@ -228,36 +228,30 @@ const Header = () => {
       resumo,
       actions
     );
-  
+
     const style = document.createElement("style");
-style.textContent = `
-  .swal2-html-container input,
-  .swal2-html-container select,
-  .swal2-html-container .form-control,
-  .swal2-html-container .form-select {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    font-size: 1rem !important;
-  }
+    style.textContent = `
+      @media (max-width: 576px) {
+        .swal2-popup {
+          width: 95% !important;
+          padding: 1rem !important;
+        }
+        .swal2-html-container .container,
+        .swal2-html-container input,
+        .swal2-html-container select {
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          font-size: 14px !important;
+        }
+        .swal2-html-container .row {
+          flex-direction: column !important;
+          gap: 0.5rem;
+        }
+      }
+    `;
+    document.head.appendChild(style);
 
-  .swal2-html-container .row {
-    gap: 0.5rem;
-  }
-
-  @media (max-width: 576px) {
-    .swal2-popup {
-      width: 95% !important;
-      padding: 1rem !important;
-    }
-
-    .swal2-html-container .row {
-      flex-direction: column !important;
-    }
-  }
-`;
-document.head.appendChild(style);
-  
     Swal.fire({
       title: "Finalizar Pedido",
       html: form,
@@ -270,7 +264,7 @@ document.head.appendChild(style);
         nome.focus();
       }
     });
-  
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       Swal.fire({
