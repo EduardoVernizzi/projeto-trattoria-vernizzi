@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer__about">
           <h3 className="footer__title">Trattoria Vernizzi</h3>
           <p className="footer__description">
-            Um pedacinho da Itália no seu prato. Sabores autênticos e um ambiente acolhedor desde 1998.
+            Um pedacinho da Itália no seu prato. Sabores autênticos e um ambiente acolhedor desde 1999.
           </p>
           <div className="footer__socials" aria-label="Redes sociais">
             <FaFacebookF className="footer__icon" aria-hidden="true" />
