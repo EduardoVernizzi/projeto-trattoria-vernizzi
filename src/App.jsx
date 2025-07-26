@@ -6,6 +6,7 @@ import Menu from "./components/Menu";
 import { CartProvider, useCart } from "./components/CartContext";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function AppContent() {
   const { addToCart } = useCart();
@@ -17,6 +18,7 @@ function AppContent() {
       <Menu onAddToCart={addToCart} />
       <About/>
       <Contact/>
+      <Footer/>
     </>
   );
 }

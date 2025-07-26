@@ -1,0 +1,106 @@
+@use 'sass:color';
+@use './variables' as vars;
+
+.footer {
+  background-color: #fff5e1;
+  color: vars.$light;
+  font-family: vars.$font;
+  padding: vars.$spacing-lg 0 1rem;
+
+  &__socials {
+    margin-top: vars.$spacing-md;
+    display: flex;
+    gap: vars.$spacing-md;
+  }
+
+  &__icon {
+    color: vars.$primary;
+    font-size: 1.2rem;
+    cursor: default;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: vars.$secondary;
+      cursor: pointer;
+    }
+  }
+
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: vars.$spacing-lg;
+    padding: 0 vars.$spacing-md;
+    flex-wrap: wrap;
+  }
+
+  &__about {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: vars.$primary;
+    margin-bottom: vars.$spacing-sm;
+  }
+
+  &__description {
+    font-size: vars.$font-size-sm;
+    line-height: 1.5;
+    color: vars.$dark;
+  }
+
+  &__nav {
+    flex: 1;
+    min-width: 250px;
+    color: vars.$primary;
+
+    & ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: vars.$dark;
+          text-decoration: none;
+          font-size: vars.$font-size-sm;
+
+          &:hover {
+            color: vars.$secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    font-size: vars.$font-size-sm;
+    margin-top: vars.$spacing-md;
+    padding-top: vars.$spacing-sm;
+    border-top: 1px solid color.adjust(vars.$dark, $lightness: 10%);
+    color: vars.$dark;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__socials {
+      margin-top: vars.$spacing-md;
+      display: flex;
+      justify-content: center;
+      gap: vars.$spacing-md;
+    }
+
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
