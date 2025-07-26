@@ -4,6 +4,8 @@ import Loader from "./components/Loader";
 import Cta from "./components/Cta";
 import Menu from "./components/Menu";
 import { CartProvider, useCart } from "./components/CartContext";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 function AppContent() {
   const { addToCart } = useCart();
@@ -13,6 +15,8 @@ function AppContent() {
       <Header />
       <Cta />
       <Menu onAddToCart={addToCart} />
+      <About/>
+      <Contact/>
     </>
   );
 }

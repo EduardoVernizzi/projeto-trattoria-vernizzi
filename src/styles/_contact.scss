@@ -1,0 +1,99 @@
+@use 'sass:color';
+@use './variables' as vars;
+
+.contact {
+  background-color: #fdfaf6;
+  padding: vars.$spacing-lg 0;
+  font-family: vars.$font;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 vars.$spacing-md;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: vars.$spacing-lg;
+  }
+
+  &__info {
+    flex: 1;
+    background-color: #fdfaf6;
+    padding: vars.$spacing-md;
+    border-radius: vars.$border-radius;
+    box-shadow: vars.$box-shadow;
+    max-width: 500px;
+
+    .contact__title {
+      font-size: 1.5rem;
+      color: vars.$primary;
+      margin-bottom: vars.$spacing-sm;
+    }
+
+    .contact__subtitle {
+      font-size: vars.$font-size-base;
+      color: color.adjust(vars.$primary, $lightness: -15%);
+      margin-bottom: vars.$spacing-md;
+    }
+
+    .contact__list {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-size: vars.$font-size-sm;
+        margin-bottom: vars.$spacing-sm;
+
+        strong {
+          display: block;
+          color: vars.$secondary;
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+
+    .contact__hours {
+      list-style: disc;
+      padding-left: 1.2rem;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__map {
+    flex: 1;
+    max-width: 600px;
+    height: 100%;
+    border-radius: vars.$border-radius;
+    overflow: hidden;
+    box-shadow: vars.$box-shadow;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 350px; 
+      border: none;
+    }
+  }
+}
+
+// 🌐 MEDIA QUERY RESPONSIVO
+@media (max-width: 768px) {
+  .contact {
+
+    padding-top: 6rem;
+
+    &__content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__map {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+}

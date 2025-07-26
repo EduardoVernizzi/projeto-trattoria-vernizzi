@@ -294,8 +294,8 @@ const Header = () => {
         <nav className="nav-desktop">
           <button className="btn-link" onClick={(e) => scrollToSection(e, 'top')}>Início</button>
           <button className="btn-link" onClick={(e) => scrollToSection(e, 'menu')}>Menu</button>
-          <button className="btn-link" onClick={(e) => scrollToSection(e, 'sobre')}>Sobre</button>
-          <button className="btn-link" onClick={(e) => scrollToSection(e, 'contato')}>Contato</button>
+          <button className="btn-link" onClick={(e) => scrollToSection(e, 'about')}>Sobre</button>
+          <button className="btn-link" onClick={(e) => scrollToSection(e, 'contact')}>Contato</button>
         </nav>
       </div>
 
@@ -353,8 +353,8 @@ const Header = () => {
         <nav className="mobile-menu">
           <button className="btn-link" onClick={(e) => scrollToSection(e, 'top')}>Início</button>
           <button className="btn-link" onClick={(e) => scrollToSection(e, 'menu')}>Menu</button>
-          <button className="btn-link" onClick={(e) => scrollToSection(e, 'sobre')}>Sobre</button>
-          <button className="btn-link" onClick={(e) => scrollToSection(e, 'contato')}>Contato</button>
+          <button className="btn-link" onClick={(e) => scrollToSection(e, 'about')}>Sobre</button>
+          <button className="btn-link" onClick={(e) => scrollToSection(e, 'contact')}>Contato</button>
         </nav>
       )}
     </header>
