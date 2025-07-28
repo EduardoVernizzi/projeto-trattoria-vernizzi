@@ -3,7 +3,6 @@ import React from "react";
 import chefImage from '../assets/chefe.png';
 import trattoriaImage from '../assets/trattoria.jpg';
 
-import '../styles/_about.scss';
 
 export default function About() {
   return (

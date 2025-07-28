@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import videoCTA from '../assets/videos/cozinha.mp4'
 
-import '../styles/_cta.scss'
+
 
 export default function Cta() {
   return (

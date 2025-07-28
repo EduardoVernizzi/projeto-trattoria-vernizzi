@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaShoppingCart, FaPlus, FaMinus, FaTrash } from 'react-icons/fa';
 import { useCart } from './CartContext';
 import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
 
 
-import '../styles/_header.scss';
+
+
 import logo from '/logo.png';
 
 const Header = () => {

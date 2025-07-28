@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "../styles/_menu.scss";
+
 
 const menuData = {
   entradas: [
